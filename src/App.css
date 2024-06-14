@@ -1,0 +1,64 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+header.top-bar {
+  background-color: #398b2c;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sidebar {
+  width: 200px;
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f4;
+  padding: 10px;
+  height: calc(100vh - 50px); /* 减去顶部区域的高度 */
+  overflow-y: auto;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar button.active {
+  background-color: #ddd;
+  color: #333;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 50px); /* 减去顶部区域的高度 */
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.section p {
+  margin: 0;
+}
