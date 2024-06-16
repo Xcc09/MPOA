@@ -15,6 +15,9 @@ function App() {
   // 引用右侧内容区域的DOM元素
   const contentRef = useRef(null);
 
+  //控制弹窗显示的状态
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // 当内容区域滚动时，更新目录栏的激活状态
   useEffect(() => {
   const handleScroll = () => {
@@ -46,6 +49,7 @@ function App() {
     // 假设文创团购 对应 "Hello world"
     if (sectionId === 1) {
       setDisplayContent('section1');
+      setIsModalOpen(true);//显示弹窗
     } 
     if (sectionId === 2){
       setDisplayContent('section2'); 
@@ -82,11 +86,20 @@ function App() {
         ))}
       </nav>
       <div className="content" ref={contentRef}>
-      /* 在这个里面加入主页面的内容 */
+      {isModalOpen && // 条件渲染弹窗
+        <div className="modal">
+          <ul>
+            <li onClick={() => { /* 可以添加点击事件处理 */ }}>A</li>
+            <li onClick={() => { /* 可以添加点击事件处理 */ }}>B</li>
+            <li onClick={() => { /* 可以添加点击事件处理 */ }}>C</li>
+            <li onClick={() => { /* 可以添加点击事件处理 */ }}>D</li>
+          </ul>
       </div>
+      }
     </div>
   </div>
-  );
+  </div>
+);
 }
 
 export default App;
