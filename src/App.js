@@ -23,7 +23,6 @@ function App() {
     // 假设文创团购 对应 "Hello world"
     if (sectionId === 1) {
       setDisplayContent('section1');
-      setIsModalOpen(true);//显示弹窗
     } 
     if (sectionId === 2){
       setDisplayContent('section2'); 
@@ -59,8 +58,8 @@ function App() {
           </button>
         ))}
       </nav>
-      <div>
-        <iframe className="content" title='content'></iframe>
+      <div className="content">
+        
       </div>
    </div>
   </div>
