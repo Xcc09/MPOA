@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -12,35 +12,9 @@ function App() {
     // 更多的section...
   ]);
 
-  // 引用右侧内容区域的DOM元素
-  const contentRef = useRef(null);
 
   //控制弹窗显示的状态
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // 当内容区域滚动时，更新目录栏的激活状态
-  useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = contentRef.current.scrollTop;
-    let activeId = null;
-
-    sections.forEach((section,index) => {
-      const sectionElement = document.getElementById(`section-${section.id}`);
-      if (sectionElement.offsetTop >= currentScrollY) {
-        activeId = section.id;
-        return;
-      }
-    });
-    setActiveSection(activeId);
-  };
-    // 这里可以添加逻辑来更新页面的URL或浏览器历史
-    // 例如：window.history.pushState({}, '', `#section-${currentSection.id}`);
-    contentRef.current.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      contentRef.current.removeEventListener('scroll', handleScroll);
-    };
-  },[]);
 
   // 新增状态来控制显示的内容
   const [displayContent, setDisplayContent] = useState('');
@@ -86,18 +60,9 @@ function App() {
         ))}
       </nav>
       <div className="content" ref={contentRef}>
-      {isModalOpen && // 条件渲染弹窗
-        <div className="modal">
-          <ul>
-            <li onClick={() => { /* 可以添加点击事件处理 */ }}>A</li>
-            <li onClick={() => { /* 可以添加点击事件处理 */ }}>B</li>
-            <li onClick={() => { /* 可以添加点击事件处理 */ }}>C</li>
-            <li onClick={() => { /* 可以添加点击事件处理 */ }}>D</li>
-          </ul>
+        <iframe title='content'></iframe>
       </div>
-      }
-    </div>
-  </div>
+   </div>
   </div>
 );
 }
