@@ -59,8 +59,8 @@ function App() {
           </button>
         ))}
       </nav>
-      <div className="content" ref={contentRef}>
-        <iframe title='content'></iframe>
+      <div>
+        <iframe className="content" title='content'></iframe>
       </div>
    </div>
   </div>
