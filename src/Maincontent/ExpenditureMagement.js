@@ -1,7 +1,7 @@
 function ExpenditureManagement(){
     return(
         <div>
-            <h>Hi ExpenditureManagement</h>
+            <h>支出管理 增/删/改/查/导出成excel</h>
         </div>
     )
 }

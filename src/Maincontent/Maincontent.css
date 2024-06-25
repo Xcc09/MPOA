@@ -1,0 +1,25 @@
+/* icon-link.css */
+.content {
+    display: flex;
+    justify-content: center;
+}
+.icon-link {
+    display: flex;           /* 使用 flexbox 布局 */
+    align-items: center;     /* 垂直居中对齐 */
+    justify-content: center;/* 水平居中对齐 */
+    flex-direction: column; /* 将子元素排列成列 */
+    text-align: center;      /* 确保文本居中，如果需要的话 */
+    margin: 10px 0;          /* 垂直方向上增加间距 */
+    /* 可以根据需要添加更多的样式，例如宽度、高度、颜色等 */
+  }
+  
+  .icon-link svg, .icon-link .icon {
+    /* 假设图标是 SVG 或者有 .icon 类 */
+    margin-bottom: 5px; /* 图标和文本之间的间距，根据需要调整 */
+  }
+  
+  /* 如果链接是块级元素，可能不需要下面的宽度和高度，根据实际情况调整 */
+  .icon-link {
+    width: 100px; /* 链接的宽度，根据需要调整 */
+    height: 100px; /* 链接的高度，根据需要调整 */
+  }

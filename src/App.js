@@ -4,9 +4,6 @@ import StaffManagement from './Maincontent/StaffManagement';
 import ExpenditureMagement from './Maincontent/ExpenditureMagement'; 
 import Heritage from './Maincontent/Heritage';
 import OrderManagement from './Maincontent/OrderManagement'; 
-
-
-
 import './App.css';
 
 function App() {
@@ -19,10 +16,6 @@ function App() {
     { id: 5, title: '文创团购' },
     // 更多的section...
   ]);
-
-
-  //控制弹窗显示的状态
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   
   return (

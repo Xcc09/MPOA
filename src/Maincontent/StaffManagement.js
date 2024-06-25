@@ -1,7 +1,8 @@
 function StaffManagement(){
     return(
         <div>
-            <h>Hi staff</h>
+            <h1>人员基本管理 -&gt; 增/删/改/查</h1>
+            <h1>工资管理/核算</h1>
         </div>
     )
 }
