@@ -25,6 +25,7 @@ header.top-bar {
   padding: 10px;
   height: calc(100vh - 50px); /* 减去顶部区域的高度 */
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidebar a {

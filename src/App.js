@@ -32,10 +32,10 @@ function App() {
     <div className="main-content">
       <nav className="sidebar">
         {sections.map((section) => (
-          <Link 
+          <Link
             key={section.id}
-            to={section.id === 1 ? '/staff-management' : 
-                section.id === 2 ? '/order-management' :
+            to={section.id === 1 ? '/StaffManagement' : 
+                section.id === 2 ? '/OrderManagement' :
                 section.id === 3 ? '/ExpenditureMagement':
                 section.id === 4 ? '/Heritage': ''}
             
