@@ -1,4 +1,12 @@
 import React, { useState,useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import StaffManagement from './Maincontent/StaffManagement'; 
+import ExpenditureMagement from './Maincontent/ExpenditureMagement'; 
+import Heritage from './Maincontent/Heritage';
+import OrderManagement from './Maincontent/OrderManagement'; 
+
+
+
 import './App.css';
 
 function App() {
@@ -16,53 +24,42 @@ function App() {
   //控制弹窗显示的状态
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // 新增状态来控制显示的内容
-  const [displayContent, setDisplayContent] = useState('');
-
-  const handleSectionClick = (sectionId) => {
-    // 假设文创团购 对应 "Hello world"
-    if (sectionId === 1) {
-      setDisplayContent('section1');
-    } 
-    if (sectionId === 2){
-      setDisplayContent('section2'); 
-    }
-    if (sectionId === 3){
-      setDisplayContent('section3'); 
-    }
-    if (sectionId === 4){
-      setDisplayContent('section4'); 
-    }
-    if (sectionId === 5){
-      setDisplayContent('section5'); 
-    }else{
-      setDisplayContent('');
-    }
-  };
-
+  
   return (
+    <Router>
     <div className="App">
     <header className="top-bar">知趣文化后台管理系统</header>
     <div className="main-content">
       <nav className="sidebar">
         {sections.map((section) => (
-          <button
+          <Link 
             key={section.id}
+            to={section.id === 1 ? '/staff-management' : 
+                section.id === 2 ? '/order-management' :
+                section.id === 3 ? '/ExpenditureMagement':
+                section.id === 4 ? '/Heritage': ''}
+            
             className={section.id === activeSection ? 'active' : ''}
             onClick={() => {
-              handleSectionClick(section.id);
               setActiveSection(section.id);
             }}           
           >
             {section.title}
-          </button>
+          </Link>
         ))}
       </nav>
       <div className="content">
-        
+      <Routes>
+          <Route path="/StaffManagement" element={<StaffManagement />} />
+          <Route path="/OrderManagement" element={<OrderManagement />} />
+          <Route path="/ExpenditureMagement" element={<ExpenditureMagement />} />
+          <Route path="/Heritage" element={<Heritage />} />
+  
+      </Routes>
       </div>
-   </div>
+    </div>
   </div>
+  </Router>
 );
 }
 

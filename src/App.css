@@ -27,14 +27,16 @@ header.top-bar {
   overflow-y: auto;
 }
 
-.sidebar button {
+.sidebar a {
+  display: block; /* 使链接填充整个容器宽度 */
   width: 100%;
   padding: 28px;
   margin-bottom: 10px;
   background-color: transparent;
-  border: none;
-  cursor: pointer;
   text-align: left;
+  color: inherit; /* 保持链接颜色与文本一致 */
+  text-decoration: none; /* 移除下划线 */
+  transition: background-color 0.3s; /* 平滑过渡背景颜色变化 */
 }
 
 .sidebar button.active {
